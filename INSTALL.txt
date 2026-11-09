@@ -1,0 +1,95 @@
+TIMEZONE PAIN FOR GOOGLE CALENDAR — version 0.3.0
+
+UPDATING AN EXISTING INSTALLATION
+Replace the files in your existing installed timezone-pain folder with these
+files. Open chrome://extensions, click Reload on Timezone Pain, then refresh
+Google Calendar. Do not install a second copy alongside the original.
+
+INSTALL IN CHROME
+1. Extract the ZIP to a folder you will keep (for example, Documents).
+2. Open chrome://extensions in Chrome.
+3. Turn on Developer mode at the top right.
+4. Click Load unpacked.
+5. Select the timezone-pain folder containing manifest.json.
+6. Open or refresh Google Calendar, then choose Week or Day view.
+
+If using the already extracted folder supplied with this download, skip step 1.
+Chrome's official instructions:
+https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
+
+DEFAULT COLOURS AND BOUNDARIES (EDITABLE)
+Green: 09:00 up to, but excluding, 17:00.
+Yellow: 06:00 up to 09:00; 17:00 up to 21:00.
+Red: 21:00 through midnight up to 06:00.
+Version 0.3.0 adds adjustable time bands alongside independent light/dark palettes.
+Default fill strength: 30% for light mode; 32% for dark mode.
+The tint blends with Calendar's actual surface, keeping its native text colours.
+These are the default boundaries. Your saved schedule applies every day,
+including weekends, to the local time in every displayed zone.
+
+CUSTOMISE TIME RANGES
+Open Settings and scroll to Time ranges. Set Start and End for Working hours
+and Night hours, then click Save changes. Each range needs a different start
+and end time. Leave a gap between the ranges; they cannot overlap.
+Either range can end the next day. For example, working hours can run from
+20:00 to 04:00, with night hours from 06:00 to 18:00.
+Minute-level changes such as 09:30 split the colour within the hour row;
+Calendar's own hour label remains at 09:00. The popup legend and both previews
+follow your schedule. Invalid schedules are rejected before saving.
+Updating an existing installation preserves palettes and adds the original default time bands.
+
+WHAT IT DOES
+Colours the hourly background of every displayed timezone column, including
+the primary timezone. Uses Calendar's displayed local times rather than fixed
+UTC offsets. Keeps Google's own timezone labels, layout and scrolling.
+Works with English 12-hour and 24-hour labels, in light and dark themes.
+Click the extension's toolbar icon, then Settings.
+Alternatively, right-click its icon and select Options.
+
+CUSTOMISE YOUR PALETTES
+Each theme has its own live preview, three colour pickers, and hue controls.
+Saturation controls how colourful the palette is. Lightness controls how light
+or dark the base colours are. Opacity controls how much background colour shows.
+
+With Adjust colours together selected, all three colours share saturation,
+lightness, and opacity; hues remain independent. Using a colour picker while linked
+shares the selected colour's saturation/lightness across the palette, keeping
+the other colours' hues. These are HSL values, not a perceptual colour match.
+Disable the link to adjust those controls individually for each colour.
+Re-enabling the link uses Working hours' current saturation, lightness, and opacity.
+The light and dark palettes always remain independent of each other.
+
+Click Save changes to apply. Existing Calendar tabs update without refreshing.
+Calendar's own surface colour determines which palette is used, independently
+of the operating system's theme. Restore defaults selects the defaults in
+the editor; click Save changes to apply the reset.
+
+PRIVACY
+Runs only on https://calendar.google.com/. Reads hour labels and adds styling.
+Does not edit events, use the Calendar API, send data, store calendar content,
+track activity or load any remote code. Uses Chrome's storage permission only
+to save your palettes and time bands locally on this device. No cloud syncing.
+Chrome may describe the required Calendar page access as permission to read
+and change data on calendar.google.com; page styling needs that access.
+
+REMOVE OR DISABLE
+Open chrome://extensions, disable or remove Timezone Pain, then refresh any
+open Calendar tabs to remove its styling.
+
+LIMITS
+VALIDATION: Configuration UI and content scripts tested in Chrome, using a
+mock of Chrome's extension storage API and a calendar-layout fixture. Checks
+passed for linked/unlinked controls, independent themes, save/reload, save
+failure handling, reset, popup navigation, narrow layout, all 1,440 minute
+classifications, 72 rows, theme switching, live settings updates, new rows,
+and no ongoing observer loop. Version 0.3.0 adds checks for invalid schedules,
+overnight shifts, minute-level splits, save/reload and popup consistency.
+Version 0.3.0 has not yet been manually installed
+and tested on the live Google Calendar site.
+
+Designed against the Google Calendar timezone-column structure inspected on
+9 November 2026. Google can change this structure; if colours disappear after
+a Google update, the extension may need an update. Month and Schedule views
+have no hourly timezone columns. Localized time labels other than the formats
+above are not supported. This is a locally loaded extension, not a Web Store
+publication. Keep the extracted folder in place while it is installed.

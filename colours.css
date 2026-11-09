@@ -1,0 +1,16 @@
+html[data-timezone-pain-theme="light"] {
+  --tzp-green-fill:var(--tzp-light-green-fill); --tzp-green-edge:var(--tzp-light-green-edge);
+  --tzp-yellow-fill:var(--tzp-light-yellow-fill); --tzp-yellow-edge:var(--tzp-light-yellow-edge);
+  --tzp-red-fill:var(--tzp-light-red-fill); --tzp-red-edge:var(--tzp-light-red-edge);
+}
+html[data-timezone-pain-theme="dark"] {
+  --tzp-green-fill:var(--tzp-dark-green-fill); --tzp-green-edge:var(--tzp-dark-green-edge);
+  --tzp-yellow-fill:var(--tzp-dark-yellow-fill); --tzp-yellow-edge:var(--tzp-dark-yellow-edge);
+  --tzp-red-fill:var(--tzp-dark-red-fill); --tzp-red-edge:var(--tzp-dark-red-edge);
+}
+.R6TFwe > .XsRa1c[data-timezone-pain] {
+  background-color: transparent !important;
+  background-image:var(--tzp-hour-edge), var(--tzp-hour-fill) !important;
+  background-size:2px 100%, 100% 100% !important;
+  background-repeat:no-repeat !important;
+}

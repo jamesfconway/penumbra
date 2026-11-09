@@ -1,0 +1,17 @@
+.schedule{margin-top:22px}
+.time-fields{width:100%;max-width:800px;border-collapse:collapse;table-layout:fixed;margin:0 0 14px}
+.time-fields th,.time-fields td{padding:5px 9px;text-align:left}
+.time-fields th{font-size:12px;font-weight:650}
+.time-fields th:first-child,.time-fields td:first-child{width:28%;padding-left:0}
+.time-fields th:last-child,.time-fields td:last-child{padding-right:0}
+.time-fields input{box-sizing:border-box;display:block;width:100%;min-width:0;margin:0;padding:9px;border:1px solid #d4dcdf;border-radius:7px;background:white;color:#243038;font:16px system-ui}
+#schedule-error{color:#ad3041;font-size:12px;margin-bottom:0}
+@media(max-width:600px){
+  .time-fields thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .time-fields,.time-fields tbody{display:block}
+  .time-fields tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin-bottom:18px}
+  .time-fields th:first-child{grid-column:1/-1;width:auto}
+  .time-fields th,.time-fields td{padding:0}
+  .time-fields td::before{content:attr(data-label);display:block;font-size:12px;font-weight:650;margin-bottom:7px}
+}
+.schedule + footer{position:static}

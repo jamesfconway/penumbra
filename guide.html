@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Timezone Pain</title>
+<style>
+  body { width: 300px; padding: 20px; margin: 0; background: #111827; color: #f9fafb; font: 14px/1.5 system-ui, sans-serif; }
+  h1 { margin: 0 0 4px; font-size: 22px; } p { color: #cbd5e1; }
+  ul { list-style: none; padding: 0; } li { margin: 14px 0; display: flex; gap: 12px; align-items: center; }
+  i { width: 16px; height: 16px; border-radius: 4px; flex: none; }
+  .green { background: #53a379; } .yellow { background: #c29d3d; } .red { background: #c36e75; }
+  small { color: #94a3b8; }
+  .time-summary { white-space: pre-line; }
+</style>
+<h1>Timezone Pain</h1>
+<p>Colours show how inconvenient a meeting time could be in each time zone.</p>
+<ul>
+  <li><i class="green" aria-hidden="true"></i><span><b>Working hours</b><br><span id="green-time" class="time-summary">Loading…</span></span></li>
+  <li><i class="yellow" aria-hidden="true"></i><span><b>Early and late hours</b><br><span id="yellow-time" class="time-summary">Loading…</span></span></li>
+  <li><i class="red" aria-hidden="true"></i><span><b>Night hours</b><br><span id="red-time" class="time-summary">Loading…</span></span></li>
+</ul>
+<p><button id="configure" style="padding:10px 15px;border:0;border-radius:7px;cursor:pointer">Settings</button></p>
+<p>Change colours and time ranges.</p>
+<small>Settings stay in this browser. No tracking or sign-in.</small>
+<script src="hours.js"></script><script src="settings.js"></script><script src="guide.js"></script></html>

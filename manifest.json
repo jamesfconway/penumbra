@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Timezone Pain for Google Calendar",
+  "version": "0.3.0",
+  "permissions": ["storage"],
+  "options_page": "options.html",
+  "description": "Colour Google Calendar's timezone columns green, yellow and red by local working hours.",
+  "action": {
+    "default_title": "Timezone Pain — colours and settings",
+    "default_popup": "guide.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://calendar.google.com/*"],
+    "js": ["hours.js", "settings.js", "content.js"],
+    "css": ["colours.css"],
+    "run_at": "document_idle"
+  }]
+}

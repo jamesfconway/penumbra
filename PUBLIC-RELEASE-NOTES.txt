@@ -1,0 +1,50 @@
+TIMEZONE PAIN — PUBLIC RELEASE ASSESSMENT
+
+Already a Chrome Manifest V3 extension. Publishing in the Chrome Web Store
+is a distribution step; it does not require a different plugin architecture.
+Public source on GitHub and a Web Store listing can coexist.
+
+Version 0.3.0 changes:
+- Editable minute-level time boundaries, including overnight shifts.
+- Colours, previews, and popup legend use the same saved schedule.
+- Existing saved palettes remain compatible.
+- Removed personal timezone names from the demonstration preview.
+
+Remaining assumptions and suggested work:
+1. One daily schedule applies to all zones and all days. For broader audiences,
+   consider per-zone profiles, workdays/weekends, breaks and multiple shifts.
+   The current engine always has three bands and four distinct boundaries.
+2. English AM/PM and numeric 24-hour hour labels. Add locale-aware parsing and
+   translated UI. Unsupported labels currently receive no colouring.
+3. Google Calendar DOM class names are implementation details, not a public
+   API. Put selectors in one adapter, test multiple layouts, and expose a clear
+   unsupported-layout status. Avoid letting users edit raw selectors.
+4. Theme is inferred from the nearest opaque Calendar surface, with an OS-theme
+   fallback. Add Auto/Light/Dark override for custom themes or detection errors.
+5. All visible timezone columns are coloured. Offer per-column selection,
+   a global pause switch, adjustable edge width, and a hide-edge option.
+6. Matching HSL saturation/lightness is not matching perceived brightness.
+   Test contrast at strong fills; consider perceptual palettes and non-colour
+   indicators for people who have difficulty distinguishing red and green.
+7. Preferences are local to one Chrome profile. Add export/import and versioned
+   settings migrations before supporting shared presets. Cloud sync is optional.
+8. Repo hygiene: portable test/build commands, dependency versions and lockfile,
+   automated checks, fixtures with no personal events, README, changelog,
+   contribution/issue guidance, and an explicit license selected by the owner.
+   Current development tests use an environment-specific Chrome path and a
+   mocked extension-storage API. Keep those limitations explicit until replaced.
+
+Web Store preparation still needed:
+- Final name/branding, extension icons, listing screenshots, and description.
+- Privacy information matching the actual behaviour, permission justification,
+  and a support/privacy URL.
+- Real unpacked-extension testing with Chrome storage, multiple Calendar
+  languages, account types, one/two/three zones, light/dark themes and updates.
+- A developer account, one-time registration fee, listing and review submission.
+- Store ZIP must have manifest.json at its root; the supplied user-install ZIP
+  instead has a containing folder for convenient extraction.
+
+Official guidance:
+https://developer.chrome.com/docs/webstore/prepare
+https://developer.chrome.com/docs/webstore/publish
+https://developer.chrome.com/docs/webstore/register
